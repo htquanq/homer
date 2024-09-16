@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <!-- Open Icon -->
-    <i class="icon fas fa-info-circle" @click="popupVisible = true" />
-
-    <!-- Content -->
-    <div class="popup" v-show="popupVisible">
-      <div class="popup-content">
-        <span class="icon close fas fa-close" @click="popupVisible = false" />
-        <p class="header">{{ item.header }}</p>
-        <p class="content">{{ item.content }}</p>
+  <Generic :item="item">
+    <template #indicator>
+      <div class="popup" v-show="popupVisible">
+        <div class="popup-content">
+          <span class="icon close fas fa-close" @click="popupVisible = false" />
+          <p class="header">{{ item.header }}</p>
+          <p class="content">{{ item.content }}</p>
+        </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </Generic>
 </template>
 
 <script>
